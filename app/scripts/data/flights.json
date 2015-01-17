@@ -1,0 +1,41 @@
+[
+	{
+		"ID" : "AI-201",
+		"Return_ID": "AI-203",
+		"Origin" : "Pune",
+		"Code" : "PNQ",
+		"Destination" : "Mumbai",
+		"DestinationCode" : "MUM",
+		"Departure" : "10:00 AM",
+		"Arrival" : "12:00 PM",
+		"Price" : "9500",
+		"Airline" : "Spice Jet",
+		"Logo" : "images/airline.jpg"
+	},
+	{
+		"ID" : "AI-202",
+		"Return_ID": "AI-204",
+		"Origin" : "Pune",
+		"Code" : "PNQ",
+		"Destination" : "Mumbai",
+		"DestinationCode" : "MUM",
+		"Departure" : "10:00 AM",
+		"Arrival" : "12:00 PM",
+		"Price" : "9500",
+		"Airline" : "Spice Jet",
+		"Logo" : "images/etihad.jpg"
+	},
+	{
+		"ID" : "AI-203",
+		"Return_ID": "AI-206",
+		"Origin" : "Delhi",
+		"Code" : "PNQ",
+		"Destination" : "Mumbai",
+		"DestinationCode" : "MUM",
+		"Departure" : "10:00 AM",
+		"Arrival" : "12:00 PM",
+		"Price" : "9500",
+		"Airline" : "Spice Jet",
+		"Logo" : "images/sa.jpg"
+	}
+]
