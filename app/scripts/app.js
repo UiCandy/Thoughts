@@ -6,7 +6,8 @@ angular
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'ngMaterial'
+    'ngMaterial',
+    '720kb.datepicker'
   ])
   .config(function ($routeProvider) {
     $routeProvider

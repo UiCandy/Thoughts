@@ -1,9 +1,9 @@
-<div class="wrapper section-material-design md-accent" md-theme="deep-purple">
+<md-toolbar class="wrapper section-material-design md-accent">
   <header>
     <h1><img src="../images/logo.png" alt="Flight Logo"><small>Flight Search Engine</small></h1>
   </header>
-  <md-progress-linear md-mode="indeterminate"></md-progress-linear>  
-</div>
+  <!-- <md-progress-linear md-mode="indeterminate"></md-progress-linear>   -->
+</md-toolbar>
 <div class="wrapper">  
   <div layout="row">
       <div flex="25"> 
@@ -12,18 +12,28 @@
             <div class="row">
               <md-text-float label="Enter Origin City" ng-model="user.Origin"></md-text-float>
               <md-text-float label="Enter Destination City" ng-model="user.Destination"></md-text-float>
-              <md-date-picker text-color="#42DFDFD" line-color="#EFEFDF"></md-date-picker>
+              <datepicker 
+                  date-min-limit="1/21/2015" 
+                  date-max-limit="1/1/2018"
+                  date-format="dd/MM/yyyy">
+                <md-text-float 
+                  label="Pick a Date" 
+                  ng-model="user.Date">
+                </md-text-float>
+              </datepicker>
             </div>
           </form>
         </div>
     </div>
-    <div flex="60">
+    <div flex="5" class="gutter"></div>
+    <div flex="60" class="results">
       <header class="search">
+
       </header>
 
       <md-content>
         <md-list>
-          <md-item ng-repeat="flight in flights | filter:user.Origin">
+          <md-item ng-repeat="flight in flights | filter:filteredFlights">
             <md-item-content class="md-whiteframe-z1" md-theme="deep-purple">
               <div class="md-tile-content">
                 <div layout="row">

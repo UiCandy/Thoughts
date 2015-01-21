@@ -6,8 +6,8 @@
 		"Code" : "PNQ",
 		"Destination" : "Mumbai",
 		"DestinationCode" : "MUM",
-		"Departure" : "10:00 AM",
-		"Arrival" : "12:00 PM",
+		"DepartureTime" : "10:00 AM",
+		"ArrivalTime" : "12:00 PM",
 		"Price" : "9500",
 		"Airline" : "Spice Jet",
 		"Logo" : "images/airline.jpg"
@@ -19,8 +19,8 @@
 		"Code" : "PNQ",
 		"Destination" : "Mumbai",
 		"DestinationCode" : "MUM",
-		"Departure" : "10:00 AM",
-		"Arrival" : "12:00 PM",
+		"DepartureTime" : "10:00 AM",
+		"ArrivalTime" : "12:00 PM",
 		"Price" : "9500",
 		"Airline" : "Spice Jet",
 		"Logo" : "images/etihad.jpg"
@@ -32,8 +32,8 @@
 		"Code" : "PNQ",
 		"Destination" : "Mumbai",
 		"DestinationCode" : "MUM",
-		"Departure" : "10:00 AM",
-		"Arrival" : "12:00 PM",
+		"DepartureTime" : "10:00 AM",
+		"ArrivalTime" : "12:00 PM",
 		"Price" : "9500",
 		"Airline" : "Spice Jet",
 		"Logo" : "images/sa.jpg"
