@@ -10,15 +10,15 @@
         <div layout="column">
           <form class="flight-form">
             <div class="row">
-              <md-text-float label="Enter Origin City" ng-model="user.Origin"></md-text-float>
-              <md-text-float label="Enter Destination City" ng-model="user.Destination"></md-text-float>
+              <md-text-float label="Enter Origin City" ng-model="departsFrom"></md-text-float>
+              <md-text-float label="Enter Destination City" ng-model="arrivesAt"></md-text-float>
               <datepicker 
                   date-min-limit="1/21/2015" 
                   date-max-limit="1/1/2018"
                   date-format="dd/MM/yyyy">
                 <md-text-float 
                   label="Pick a Date" 
-                  ng-model="user.Date">
+                  ng-model="departureDate">
                 </md-text-float>
               </datepicker>
             </div>
@@ -28,12 +28,12 @@
     <div flex="5" class="gutter"></div>
     <div flex="60" class="results">
       <header class="search">
-
+          Number of Flights: {{flight.length}}
       </header>
 
       <md-content>
         <md-list>
-          <md-item ng-repeat="flight in flights | filter:filteredFlights">
+          <md-item ng-repeat="flight in flights | filterFlights:{ID:departsFrom}">
             <md-item-content class="md-whiteframe-z1" md-theme="deep-purple">
               <div class="md-tile-content">
                 <div layout="row">
@@ -41,18 +41,18 @@
                   <h2>{{ flight.Airline }} - Rs. {{ flight.Price }}</h2>
                     <div layout="row">
                     <div flex>
-                      <small>AI-202</small>
-                      <h2>{{ flight.Origin }} > {{ flight.Destination }}</h2>
-                      <h4>{{ flight.Code }} > {{ flight.DestinationCode }}</h4>
-                      <h4>Depart: {{ flight.Departure}}</h4>
-                      <h4>Arrive: {{ flight.Arrival}}</h4>
+                      <small>{{ flight.ID }}</small>
+                      <h2>{{ flight.Departure.From }} > {{ flight.Arrival.At }}</h2>
+                      <h4>{{ flight.Departure.Code }} > {{ flight.Arrival.Code }}</h4>
+                      <h4>Depart: {{ flight.Departure.Time}}</h4>
+                      <h4>Arrive: {{ flight.Arrival.Time}}</h4>
                     </div>
                     <div flex>
-                      <small>AI-202</small>
-                      <h2>{{ flight.Destination }} < {{ flight.Origin }}</h2>
-                      <h4>{{ flight.DestinationCode }} < {{ flight.Code }}</h4>
-                      <h4>Depart: {{ flight.Departure}}</h4>
-                      <h4>Arrive: {{ flight.Arrival}}</h4>
+                      <small>{{ flight.Return_ID }}</small>
+                      <h2>{{ flight.Arrival.At }} < {{ flight.Departure.From }}</h2>
+                      <h4>{{ flight.Arrival.Code }} < {{ flight.Departure.Code }}</h4>
+                      <h4>Depart: {{ flight.Departure.Time}}</h4>
+                      <h4>Arrive: {{ flight.Arrival.Time}}</h4>
                     </div>
                     </div>
                   </div>
@@ -66,7 +66,8 @@
             <md-divider ng-if="!$last"></md-divider>
           </md-item>
         </md-list>
-      </md-content>
+      </md-content>      
+
     </div>
   </div>
 </div>
