@@ -16,6 +16,5 @@ angular.module('thoughtworksApp')
         return deferred.promise;
       }
     };
-
     return flights;
   });

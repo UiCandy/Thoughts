@@ -2,40 +2,58 @@
 	{
 		"ID" : "AI-201",
 		"Return_ID": "AI-203",
-		"Departure" : "Pune",
-		"Code" : "PNQ",
-		"Arrival" : "Mumbai",
-		"ArriCode" : "MUM",
-		"DepartureTime" : "10:00 AM",
-		"ArrivalTime" : "12:00 PM",
-		"Price" : "9500",
-		"Airline" : "Spice Jet",
+		"Price" : "2500",
+		"Airline" : "KLM",
+		"Departure" : {
+			"From" : "Pune",
+			"Code" : "PNQ",
+			"Time" : "10:00 AM",
+			"Date" : "22/01/2015"
+			},
+		"Arrival" : {
+			"At" : "Mumbai",
+			"Code" : "MUM",
+			"Time" : "12:00 PM",
+			"Date" : "22/01/2015"
+			},
 		"Logo" : "images/airline.jpg"
 	},
 	{
 		"ID" : "AI-202",
 		"Return_ID": "AI-204",
-		"Departure" : "Pune",
-		"Code" : "PNQ",
-		"Arrival" : "Mumbai",
-		"ArriCode" : "MUM",
-		"DepartureTime" : "10:00 AM",
-		"ArrivalTime" : "12:00 PM",
-		"Price" : "9500",
-		"Airline" : "Spice Jet",
+		"Price" : "2500",
+		"Airline" : "Jet Airways",		
+		"Departure" : {
+			"From" : "Pune",
+			"Code" : "PNQ",
+			"Time" : "10:00 AM",
+			"Date" : "24/01/2015"
+			},
+		"Arrival" : {
+			"At" : "Mumbai",
+			"Code" : "MUM",
+			"Time" : "12:00 PM",
+			"Date" : "24/01/2015"
+			},
 		"Logo" : "images/etihad.jpg"
 	},
 	{
 		"ID" : "AI-203",
 		"Return_ID": "AI-206",
-		"Departure" : "Delhi",
-		"Code" : "PNQ",
-		"Arrival" : "Mumbai",
-		"ArriCode" : "MUM",
-		"DepartureTime" : "10:00 AM",
-		"ArrivalTime" : "12:00 PM",
-		"Price" : "9500",
+		"Price" : "1500",
 		"Airline" : "Spice Jet",
+		"Departure" : {
+			"From" : "Delhi",
+			"Code" : "DEL",
+			"Time" : "10:00 AM",
+			"Date" : "26/01/2015"
+			},
+		"Arrival" : {
+			"At" : "Bangalore",
+			"Code" : "BNG",
+			"Time" : "12:00 PM",
+			"Date" : "26/01/2015"
+			},
 		"Logo" : "images/sa.jpg"
 	}
 ]

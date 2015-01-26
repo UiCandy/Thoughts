@@ -1,0 +1,73 @@
+<md-toolbar class="wrapper section-material-design md-accent">
+  <header>
+    <h1><img src="../images/logo.png" alt="Flight Logo"><small>Flight Search Engine</small></h1>
+  </header>
+  <!-- <md-progress-linear md-mode="indeterminate"></md-progress-linear>   -->
+</md-toolbar>
+<div class="wrapper">  
+  <div layout="row">
+      <div flex="25"> 
+        <div layout="column">
+          <form class="flight-form">
+            <div class="row">
+              <md-text-float label="Enter Origin City" ng-model="departsFrom"></md-text-float>
+              <md-text-float label="Enter Destination City" ng-model="arrivesAt"></md-text-float>
+              <datepicker 
+                  date-min-limit="1/21/2015" 
+                  date-max-limit="1/1/2018"
+                  date-format="dd/MM/yyyy">
+                <md-text-float 
+                  label="Pick a Date" 
+                  ng-model="departureDate">
+                </md-text-float>
+              </datepicker>
+            </div>
+          </form>
+        </div>
+    </div>
+    <div flex="5" class="gutter"></div>
+    <div flex="60" class="results">
+      <header class="search">
+          Number of Flights: {{flight.length}}
+      </header>
+
+      <md-content>
+        <md-list>
+          <md-item ng-repeat="flight in flights | filterFlights:{ID:departsFrom}">
+            <md-item-content class="md-whiteframe-z1" md-theme="deep-purple">
+              <div class="md-tile-content">
+                <div layout="row">
+                  <div flex>
+                  <h2>{{ flight.Airline }} - Rs. {{ flight.Price }}</h2>
+                    <div layout="row">
+                    <div flex>
+                      <small>{{ flight.ID }}</small>
+                      <h2>{{ flight.Departure.From }} > {{ flight.Arrival.At }}</h2>
+                      <h4>{{ flight.Departure.Code }} > {{ flight.Arrival.Code }}</h4>
+                      <h4>Depart: {{ flight.Departure.Time}}</h4>
+                      <h4>Arrive: {{ flight.Arrival.Time}}</h4>
+                    </div>
+                    <div flex>
+                      <small>{{ flight.Return_ID }}</small>
+                      <h2>{{ flight.Arrival.At }} < {{ flight.Departure.From }}</h2>
+                      <h4>{{ flight.Arrival.Code }} < {{ flight.Departure.Code }}</h4>
+                      <h4>Depart: {{ flight.Departure.Time}}</h4>
+                      <h4>Arrive: {{ flight.Arrival.Time}}</h4>
+                    </div>
+                    </div>
+                  </div>
+                  <div flex="20" class="md-tile-right" layout="column" layout-align="center center">
+                    <img ng-src="{{flight.Logo}}" class="face" alt="{{flight.Airline}}" />
+                    <md-button class="md-raised md-primary" layout-align="center end">Book Now!</md-button>
+                  </div>
+                </div>
+              </div>
+            </md-item-content>
+            <md-divider ng-if="!$last"></md-divider>
+          </md-item>
+        </md-list>
+      </md-content>      
+
+    </div>
+  </div>
+</div>

@@ -3,7 +3,7 @@
 		"ID" : "AI-201",
 		"Return_ID": "AI-203",
 		"Price" : "2500",
-		"Airline" : "Spice Jet",
+		"Airline" : "KLM",
 		"Departure" : {
 			"From" : "Pune",
 			"Code" : "PNQ",
@@ -41,7 +41,7 @@
 		"ID" : "AI-203",
 		"Return_ID": "AI-206",
 		"Price" : "1500",
-		"Airline" : "Spice Jet",
+		"Airline" : "Air India",
 		"Departure" : {
 			"From" : "Delhi",
 			"Code" : "DEL",
