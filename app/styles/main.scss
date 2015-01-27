@@ -2,7 +2,7 @@
 // endbower
 
 //colors
-$red : #0074a2;
+$red : #e14d43;
 $blue : #0074a2;
 $gray : #363b3f;
 $grey : #25282b;
@@ -33,20 +33,85 @@ img{
     max-width: 100%;
 }
 
-header{
+header{    
     h1{
         margin: 0;
         padding: 0.5em;
         font-weight: 400;
         font-size: 20px;
+        img{
+            width: 32px;
+            margin-bottom: -3px;
+        }
     }
     &.search{
         margin-top: 6px
     }
 }
+//
+.slider-control {
+  height: 1em;
+  padding-top: .5em;
+}
+
+.slider {
+  height: 2px;
+  border: 1px solid black;
+}
+
+.slider-handle {
+  height: 1em;
+  width: 1em;
+  border: 1px solid black;
+  border-radius: 2px;
+  background: #fff;
+  cursor: pointer;  
+}
+.slider-handle:hover {
+  background: #ddd;
+}
+
+//material elements
+md-toolbar.md-default-theme{
+    background-color: $gray;
+}
+
+date-picker{
+    margin-top: 0;
+}
+
+.airline label{
+    margin-top: 60px;
+}
 
 .wrapper{
     padding: 0 0px;
+    min-height: 48px;
+    md-content{
+        padding: 8px;
+        md-item{
+            display: block;
+            margin: 10px 0;
+            .md-tile-content{
+                padding: 0;
+                h2{
+                    border-bottom: 1px solid #eee;
+                    padding-bottom: 14px;
+                    &.airline-title{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+    .flight-info{
+        background: #fbfbfb;
+        padding: 15px 20px;
+
+        h4{
+            font-size: 80%;
+        }
+    }
 }
 
 .container{
@@ -57,16 +122,27 @@ header{
 /* HomePage Styles*/
 
 .md-primary{
-    padding: 6% 10%;
+    padding: 4% 8%;
     font-size: 14px;
+    max-width: 90%;
 }
 
 .flight-form{
-    padding: 1em;
+    margin-left: 1em;
+    input{
+        max-width: 100%;
+    }
 }
-.results h2 {
-    font-size: 1em;
-    margin: 0.53em 0 0.4em;
+.results {
+    margin-left: 2.5%;
+    h2{
+        font-size: 1em;
+        margin: 0.53em 0 0.4em;
+    }
+}
+
+.filter-wrap{
+    background-color: $red;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

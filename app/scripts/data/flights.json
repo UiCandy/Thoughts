@@ -3,26 +3,26 @@
 		"ID" : "AI-201",
 		"Return_ID": "AI-203",
 		"Price" : "2500",
-		"Airline" : "KLM",
+		"Airline" : "Delta Airways",
 		"Departure" : {
-			"From" : "Pune",
+			"From" : "Delhi",
 			"Code" : "PNQ",
 			"Time" : "10:00 AM",
 			"Date" : "22/01/2015"
 			},
 		"Arrival" : {
-			"At" : "Mumbai",
+			"At" : "Chandigarh",
 			"Code" : "MUM",
 			"Time" : "12:00 PM",
 			"Date" : "22/01/2015"
 			},
-		"Logo" : "images/airline.jpg"
+		"Logo" : "images/delta.png"
 	},
 	{
 		"ID" : "AI-202",
 		"Return_ID": "AI-204",
 		"Price" : "2500",
-		"Airline" : "Spice Jet",		
+		"Airline" : "Etihad Airways",		
 		"Departure" : {
 			"From" : "Pune",
 			"Code" : "PNQ",
@@ -35,13 +35,13 @@
 			"Time" : "12:00 PM",
 			"Date" : "24/01/2015"
 			},
-		"Logo" : "images/etihad.jpg"
+		"Logo" : "images/etihad.png"
 	},
 	{
 		"ID" : "AI-203",
 		"Return_ID": "AI-206",
 		"Price" : "1500",
-		"Airline" : "Air India",
+		"Airline" : "South African Airways",
 		"Departure" : {
 			"From" : "Delhi",
 			"Code" : "DEL",
@@ -54,6 +54,64 @@
 			"Time" : "12:00 PM",
 			"Date" : "26/01/2015"
 			},
-		"Logo" : "images/sa.jpg"
+		"Logo" : "images/sa.png"
+	},
+	{
+		"ID" : "AI-201",
+		"Return_ID": "AI-203",
+		"Price" : "12500",
+		"Airline" : "Air Seychelles",
+		"Departure" : {
+			"From" : "Pune",
+			"Code" : "PNQ",
+			"Time" : "10:00 AM",
+			"Date" : "26/01/2015"
+			},
+		"Arrival" : {
+			"At" : "Delhi",
+			"Code" : "DEL",
+			"Time" : "12:00 PM",
+			"Date" : "28/01/2015"
+			},
+		"Logo" : "images/as.png"
+	},
+	{
+		"ID" : "AI-202",
+		"Return_ID": "AI-204",
+		"Price" : "2500",
+		"Airline" : "Swiss Airways",		
+		"Departure" : {
+			"From" : "BNG",
+			"Code" : "PNQ",
+			"Time" : "10:00 AM",
+			"Date" : "30/01/2015"
+			},
+		"Arrival" : {
+			"At" : "Pune",
+			"Code" : "PNQ",
+			"Time" : "12:00 PM",
+			"Date" : "02/02/2015"
+			},
+		"Logo" : "images/swiss.png"
+	},
+	{
+		"ID" : "AI-203",
+		"Return_ID": "AI-206",
+		"Price" : "1500",
+		"Airline" : "Sri Lankan Airways",
+		"Departure" : {
+			"From" : "Delhi",
+			"Code" : "DEL",
+			"Time" : "10:00 AM",
+			"Date" : "26/01/2015"
+			},
+		"Arrival" : {
+			"At" : "Goa",
+			"Code" : "BNG",
+			"Time" : "12:00 PM",
+			"Date" : "28/01/2015"
+			},
+		"Logo" : "images/sri.png"
 	}
+
 ]

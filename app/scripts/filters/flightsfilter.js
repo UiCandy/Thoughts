@@ -20,7 +20,8 @@ angular.module('thoughtworksApp')
                         fData = fData.concat(
                           $filter('filter')
                           (this.filteredData,fObj));
-                    }, this);                
+                    }, this);
+                console.log(this.filteredData);
               }
               else if(angular.isArray(query)){
                 console.log(query);
@@ -39,8 +40,11 @@ angular.module('thoughtworksApp')
                   
                 }                   
               }                 
-              if(fData.length >= 0){
+              if(fData.length > 0){
                 this.filteredData = fData;
+              }
+              else{
+                this.filteredData;
               }
             }
           }
@@ -52,6 +56,6 @@ angular.module('thoughtworksApp')
         });     
       }
       
-      return filterObj.filteredData;
+      return filterObj.filteredData;      
     }
   }])

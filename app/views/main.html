@@ -1,72 +1,77 @@
 <md-toolbar class="wrapper section-material-design md-accent">
-  <header>
-    <h1>
-      <img src="../images/logo.png" alt="Flight Logo">
-      <!-- <small>Flight Search Engine</small> -->
-    </h1>
-  </header>
-  <!-- <md-progress-linear md-mode="indeterminate"></md-progress-linear>   -->
+    <header>
+      <h1>
+        <img src="../images/logo.png" alt="Flight Logo">
+        <small>Airborne</small>
+      </h1>
+    </header>
+    <!-- <md-progress-linear md-mode="indeterminate"></md-progress-linear>   -->  
 </md-toolbar>
-<div class="wrapper">  
+<div class="wrapper" layout-fill>  
   <div layout="row">
-      <div flex="25"> 
-        <div layout="column">
-          <form class="flight-form">
-            <div class="row">
-              <md-text-float label="Enter Origin City" ng-model="departsFrom"></md-text-float>
-              <md-text-float label="Enter Destination City" ng-model="arrivesAt"></md-text-float>
-
-              <datepicker 
-                  date-min-limit="1/21/2015" 
-                  date-max-limit="1/1/2018"
-                  date-format="dd/MM/yyyy">
-                <md-text-float 
-                  label="Pick a Date" 
-                  ng-model="departureDate">
-                </md-text-float>
-              </datepicker>
-              <md-text-float label="Enter Destination City" ng-model="airline"></md-text-float>
-            </div>
-          </form>
-        </div>
+    <div class="filter-wrap" flex="20" flex-sm="30">         
+        <form class="flight-form">
+          <div class="row" md-theme="blue-grey">
+            <md-text-float label="Enter Origin City" ng-model="departsFrom"></md-text-float>
+            <md-text-float label="Enter Destination City" ng-model="arrivesAt"></md-text-float>
+            <datepicker 
+                date-min-limit="1/21/2015" 
+                date-max-limit="1/1/2018"
+                date-format="dd/MM/yyyy">
+              <md-text-float 
+                label="Pick a Date" 
+                ng-model="departureDate">
+              </md-text-float>
+            </datepicker>
+            <md-text-float class="airline" label="Airline" ng-model="airline"></md-text-float>
+            <md-text-float class="passengers" label="Passengers" ng-model="passengers" type="number"></md-text-float>
+            <p>
+                model: {{otherProbs}}
+                </p>
+                <slider model="otherProbs" ></slider>
+          </div>
+        </form>        
     </div>
-    <div flex="5" class="gutter"></div>
-    <div flex="60" class="results">
+    
+    <div flex="75" class="results">
       <header class="search">
+          Showing {{filterFlights}} flights for your search.
       </header>
       <md-content>
         <md-list>
-        <md-item ng-repeat="flight in flights | filterFlights:{'Departure.From':departsFrom, 'Arrival.At':arrivesAt, Airline:airline, 'Departure.Date':departureDate}">
-            <md-item-content class="md-whiteframe-z1" md-theme="deep-purple">
-            <div class="md-tile-content">
-              <div layout="row">
-                <div flex>
-                <h2>{{ flight.Airline }} - Rs. {{ flight.Price }}</h2>
-                  <div layout="row">
-                  <div flex>
-                    <small>{{ flight.ID }}</small>
-                    <h2>{{ flight.Departure.From }} > {{ flight.Arrival.At }}</h2>
-                    <h4>{{ flight.Departure.Code }} > {{ flight.Arrival.Code }}</h4>
-                    <h4>Depart: {{ flight.Departure.Time}}</h4>
-                    <h4>Arrive: {{ flight.Arrival.Time}}</h4>
+          <md-item ng-repeat="flight in flights | filterFlights:{'Departure.From':departsFrom, 'Arrival.At':arrivesAt, Airline:airline, 'Departure.Date':departureDate}">
+              <md-item-content class="md-whiteframe-z1" md-theme="blue-grey">
+              <div class="md-tile-content">
+                <div layout="row">
+                  <div class="flight-info" flex>
+                  <h2 class="airline-title">{{ flight.Airline }} - Rs. {{ flight.Price }}</h2>
+                    <div class="details" layout="row">
+                    <div flex>
+                      <small>{{ flight.ID }}</small>
+                      <h2>{{ flight.Departure.From }} > {{ flight.Arrival.At }}</h2>
+                      <h4>{{ flight.Departure.Code }} > {{ flight.Arrival.Code }}</h4>
+                      <h4>Depart: {{ flight.Departure.Time}}</h4>
+                      <h4>Arrive: {{ flight.Arrival.Time}}</h4>
+                    </div>
+                    <div flex>
+                      <small>{{ flight.Return_ID }}</small>
+                      <h2>{{ flight.Arrival.At }} < {{ flight.Departure.From }}</h2>
+                      <h4>{{ flight.Arrival.Code }} < {{ flight.Departure.Code }}</h4>
+                      <h4>Depart: {{ flight.Departure.Time}}</h4>
+                      <h4>Arrive: {{ flight.Arrival.Time}}</h4>
+                    </div>
+                    </div>
                   </div>
-                  <div flex>
-                    <small>{{ flight.Return_ID }}</small>
-                    <h2>{{ flight.Arrival.At }} < {{ flight.Departure.From }}</h2>
-                    <h4>{{ flight.Arrival.Code }} < {{ flight.Departure.Code }}</h4>
-                    <h4>Depart: {{ flight.Departure.Time}}</h4>
-                    <h4>Arrive: {{ flight.Arrival.Time}}</h4>
+                  <div flex="25" class="md-tile-right" layout="column" layout-align="center center">
+                    <div class="frame" layout="column" layout-align="center center" style="min-height:90px">
+                      <img ng-src="{{flight.Logo}}" class="face" alt="{{flight.Airline}}" />
+                    </div> 
+                    <md-button class="md-raised md-primary md-hue-2" layout-align="center end">Book Now!</md-button>
                   </div>
-                  </div>
-                </div>
-                <div flex="20" class="md-tile-right" layout="column" layout-align="center center">
-                  <img ng-src="{{flight.Logo}}" class="face" alt="{{flight.Airline}}" />
-                  <md-button class="md-raised md-primary" layout-align="center end">Book Now!</md-button>
                 </div>
               </div>
-            </div>
-            </md-item-content>
-            <md-divider ng-if="!$last"></md-divider>
+              </md-item-content>
+              <md-divider ng-if="!$last"></md-divider>
           </md-item>
         </md-list>
       </md-content>
