@@ -6,6 +6,8 @@ $red : #e14d43;
 $blue : #0074a2;
 $gray : #363b3f;
 $grey : #25282b;
+$yellow: #FFF015;
+//$yellow: #FFF515;
 
 .browsehappy {
     margin: 0.2em 0;
@@ -48,27 +50,10 @@ header{
         margin-top: 6px
     }
 }
-//
-.slider-control {
-  height: 1em;
-  padding-top: .5em;
-}
+//price slider label 
 
-.slider {
-  height: 2px;
-  border: 1px solid black;
-}
-
-.slider-handle {
-  height: 1em;
-  width: 1em;
-  border: 1px solid black;
-  border-radius: 2px;
-  background: #fff;
-  cursor: pointer;  
-}
-.slider-handle:hover {
-  background: #ddd;
+.price-range{
+  color: rgba(0, 0, 0, 0.26);
 }
 
 //material elements
@@ -95,7 +80,7 @@ date-picker{
             .md-tile-content{
                 padding: 0;
                 h2{
-                    border-bottom: 1px solid #eee;
+                    border-bottom: 1px dashed #ddd;
                     padding-bottom: 14px;
                     &.airline-title{
                         margin-top: 0;
@@ -132,17 +117,86 @@ date-picker{
     input{
         max-width: 100%;
     }
+    md-radio-group{
+        border: none;
+        md-radio-button{
+            margin-bottom: 0;
+            margin-left: 0;
+            font-size: 14px;
+            color:rgba(0,0,0,0.4)
+            &.md-checked{
+                background-color:rgba(0,0,0,0.8);
+                .md-on{
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-color: rgba(0, 0, 0, 0.4);
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+                .md-off{
+                    border-color: $grey;
+                }                
+                .md-ink-ripple {
+                    color: rgba(0, 0, 0, 0.4);
+                    -webkit-transform: scale(1);
+                    transform: scale(1);
+                }
+            }
+
+        }        
+    }
+
+    .passengers, .date-wrapper{
+        margin-top: -10px;
+    }
+    
+    datepicker md-input-group{
+        margin-top: 0;
+    }
+
+    md-checkbox{
+        margin-left: 0;
+        .md-icon{
+            border-color: rgba(0, 0, 0, 0.4);
+        }
+        .md-label{
+            border: none;
+            &:focus, &:active{
+                border: none;
+            }
+            span{
+                color: rgba(0, 0, 0, 0.26);
+            }
+        }
+        &.md-checked{
+            .md-label{
+                span{
+                    color: rgba(0, 0, 0, 0.73);
+                }
+                &:focus{
+                    outline: none;  
+                }
+            }
+        }
+    }
 }
 .results {
     margin-left: 2.5%;
     h2{
         font-size: 1em;
-        margin: 0.53em 0 0.4em;
+        margin: 0.53em 0 0.75em;
     }
+    .details{
+        h2{
+            margin-bottom: 15px;
+            margin-top: 4px;
+            padding-bottom: 10px;
+        }
+    }    
 }
 
 .filter-wrap{
-    background-color: $red;
+    background-color: #f2f2f2;
+    min-height: 660px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -166,6 +220,15 @@ date-picker{
     padding-bottom: 19px;
 }
 
+/* date picker styles */
+._720kb-datepicker-calendar{
+    ._720kb-datepicker-calendar-header{
+        background-color:$gray;
+    }
+    ._720kb-datepicker-calendar-month span{
+        color: rgba(255,255,255,0.5);
+    }
+}
 /* Custom page footer */
 .footer {
     padding-top: 19px;
@@ -218,4 +281,24 @@ date-picker{
     .jumbotron {
         border-bottom: 0;
     }
+}
+
+//Transition
+
+.ng-hide-add-active {
+  display: block!important;
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+}
+
+.ng-hide-remove-active {
+  display: block!important;
+  -webkit-transition: 0.5s linear all;
+  transition: 0.5s linear all;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+}
+
+.ng-hide {
+  opacity: 0;
 }

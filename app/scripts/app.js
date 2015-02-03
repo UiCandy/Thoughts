@@ -7,7 +7,8 @@ angular
     'ngSanitize',
     'ngRoute',
     'ngMaterial',
-    '720kb.datepicker'
+    '720kb.datepicker',
+    'ui.slider'
   ])
   .config(function ($routeProvider) {
     $routeProvider

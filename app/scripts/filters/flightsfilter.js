@@ -29,7 +29,7 @@ angular.module('thoughtworksApp')
                   for(var i=0;i<obj.length;i++){
                     if(angular.isDefined(query[i])){
                       fObj[key] = query[i];
-                      //fData = fData.concat($filter('filter')(this.filteredData,fObj));  
+                      //fData = fData.concat($filter('filter')(this.filteredData,fObj));
                       angular.forEach(fObj, function(fObj, i){
                               fData = fData.concat(
                                 $filter('filter')

@@ -6,13 +6,13 @@
 		"Airline" : "Delta Airways",
 		"Departure" : {
 			"From" : "Delhi",
-			"Code" : "PNQ",
+			"Code" : "DEL",
 			"Time" : "10:00 AM",
 			"Date" : "22/01/2015"
 			},
 		"Arrival" : {
 			"At" : "Chandigarh",
-			"Code" : "MUM",
+			"Code" : "CHD",
 			"Time" : "12:00 PM",
 			"Date" : "22/01/2015"
 			},
@@ -81,8 +81,8 @@
 		"Price" : "2500",
 		"Airline" : "Swiss Airways",		
 		"Departure" : {
-			"From" : "BNG",
-			"Code" : "PNQ",
+			"From" : "Bangalore",
+			"Code" : "BNG",
 			"Time" : "10:00 AM",
 			"Date" : "30/01/2015"
 			},
@@ -107,7 +107,7 @@
 			},
 		"Arrival" : {
 			"At" : "Goa",
-			"Code" : "BNG",
+			"Code" : "GOA",
 			"Time" : "12:00 PM",
 			"Date" : "28/01/2015"
 			},
